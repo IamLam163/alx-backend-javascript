@@ -5,6 +5,3 @@ export default function divideFunction(numerator, denominator) {
     return numerator / denominator;
   }
 }
-
-console.log(divideFunction(10, 2));
-console.log(divideFunction(10, 0));
