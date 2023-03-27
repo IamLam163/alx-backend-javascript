@@ -4,7 +4,7 @@ export default function getListStudentIds(getListStudents) {
   if (!Array.isArray(getListStudents)) {
     return [];
   }
-  return getListStudents.map((list) => list.location);
+  return getListStudents.map((list) => list.id);
 }
 
 console.log(getListStudentIds('hello'));
