@@ -1,4 +1,21 @@
-const readline = require('readline');
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
+
+process.stdin.on('readable', () => {
+  const chunk = process.stdin.read();
+
+  if (chunk) {
+    process.stdout.write(`Your name is: ${chunk}`);
+  }
+});
+
+process.stdin.on('end', () => {
+  process.stdout.write('This important software is now closing\n');
+});
+
+
+
+/*
+ const readline = require('readline');
 
 console.log('Welcome to Holberton School, what is your name?');
 
@@ -13,7 +30,7 @@ rl.on('line', function(input) {
   console.log('This important software is now closing');
   rl.close();
 });
-
+*/
 /*
 rl.question('What is your name\n', function(string) {
   userInput = string;
