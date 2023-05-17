@@ -4,10 +4,12 @@ function countStudents(path) {
   try {
     const data = fs.readFileSync(path, 'utf8');
 
-    const students = data.split('\n').filter(line => line !== '');
+    const students = data.split('\n').filter(line => line.trim() !== '');
     const studentsByField = students.reduce((acc, student) => {
-      const [firstname, lastname, age, field] = student.split(',');
-      acc[field] = (acc[field] || []).concat(firstname);
+      const [firstname, , , field] = student.split(',');
+      if (field !== 'field') {
+        acc[field] = (acc[field] || []).concat(firstname);
+      }
       return acc;
     }, {});
 
@@ -21,3 +23,5 @@ function countStudents(path) {
 }
 
 module.exports = countStudents;
+
+countStudents("database.csv");
