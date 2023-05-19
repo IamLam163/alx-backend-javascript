@@ -8,8 +8,8 @@ describe('API test, must return status of 200', function() {
 
   it('GET / and returns 200', function(done) {
     request.get(`${url}/`, (err, res, body) => {
-      expect(res.statusCode).to.be.equal(200);
-      expect(body).to.be.equal('Welcome to the payment system');
+      expect(res.statusCode).to.equal(200);
+      expect(body).to.equal('Welcome to the payment system');
       done();
     });
   });
