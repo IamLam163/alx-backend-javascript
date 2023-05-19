@@ -1,14 +1,12 @@
-const request = require('request');
-const { expect } = require('cha');
+const request = require("request");
+const chai = require("chai");
+const expect = chai.expect;
 
-
-describe('API test, must return status of 200', function() {
-  const url = 'http://localhost:7865';
-
-  it('GET / and returns 200', function(done) {
-    request.get(`${url}/`, (err, res, body) => {
-      expect(res.statusCode).to.equal(200);
-      expect(body).to.equal('Welcome to the payment system');
+describe("GET /", function() {
+  it("Makes call to GET /", function(done) {
+    request("http://localhost:7865", (error, response, body) => {
+      expect(response.statusCode).to.equal(200);
+      expect(body).to.equal("Welcome to the payment system");
       done();
     });
   });
