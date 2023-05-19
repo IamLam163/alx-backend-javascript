@@ -1,6 +1,5 @@
 const request = require('request');
-const app = require('./api');
-const { expect } = require('chai');
+const { expect } = require('cha');
 
 
 describe('API test, must return status of 200', function() {
